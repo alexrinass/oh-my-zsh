@@ -7,5 +7,6 @@ if [ -x /opt/local/bin/gls ]; then
 fi
 
 # Set terminal display colors
-# TODO: check $ZSH_DIRCOLORS_THEME
-eval `dircolors $ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme`
+if [ ! -z "$ZSH_DIRCOLORS_THEME" ] && [ -f "$ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme" ]; then
+  eval `dircolors "$ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme"`
+fi
