@@ -9,7 +9,3 @@ alias puni="sudo port uninstall inactive"
 alias puo="sudo port upgrade outdated"
 alias pup="psu && puo"
 
-# add macports completion function to path
-fpath=($ZSH/plugins/macports $fpath)
-autoload -U compinit
-compinit -i
