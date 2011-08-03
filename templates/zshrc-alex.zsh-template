@@ -9,6 +9,9 @@ export ZSH_THEME="alexrinass"
 # Look in ~/.oh-my-zsh/plugins/dircolors/themes/
 export ZSH_DIRCOLORS_THEME="alexrinass"
 
+# Set name of manpager to use
+export ZSH_MANPAGER="textmate"
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -21,6 +24,7 @@ export DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(dircolors)
+#plugins=(macports dircolors manpager mysql-macports apache2-macports rvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,6 +39,14 @@ setopt NO_BEEP
 
 # Umask for new files/directories
 umask 0002
+
+export EDITOR=/usr/bin/mate
+
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Macports coreutils aliases
+#alias cp='/opt/local/bin/gcp'
+
 
 # Color definitions for OS X xterm
 #source ~/.zkbd/xterm-color-apple-darwin9.0
