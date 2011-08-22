@@ -1,1 +1,1 @@
-export MANPAGER='col -bx |/usr/bin/mate'
+export MANPAGER='col -bx |/usr/local/bin/mate'
