@@ -24,6 +24,9 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want disable red dots displayed while waiting for completion
 DISABLE_COMPLETION_WAITING_DOTS="true"
 
+# Extend PATH variable 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 if [ -d $HOME/bin ]; then
   export PATH=$HOME/bin:$PATH
 fi
