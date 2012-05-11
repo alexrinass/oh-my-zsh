@@ -1,3 +1,6 @@
+# Language Setting
+LANG=en_US.UTF-8
+
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="alexrinass"
