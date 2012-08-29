@@ -1,4 +1,8 @@
-PROMPT='%{$fg[blue]%}%60<..<%~%{$fg[blue]%}$(git_prompt_info)%{$reset_color%} '
+if [ -n "$SSH_CLIENT" ]; then
+	PROMPT='%{$fg_bold[magenta]%}%n@%m%{$reset_color%} %{$fg[blue]%}%60<..<%~%{$fg[blue]%}$(git_prompt_info)%{$reset_color%} '
+else
+	PROMPT='%{$fg[blue]%}%60<..<%~%{$fg[blue]%}$(git_prompt_info)%{$reset_color%} '
+fi
 
 if which rbenv &> /dev/null; then
 	RPROMPT='%{$fg[red]%}$(rbenv version | sed -e "s/ (set.*$//") %{$reset_color%}'
