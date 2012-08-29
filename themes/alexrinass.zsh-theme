@@ -1,11 +1,10 @@
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[yellow]%}git:("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
+PROMPT='%{$fg[blue]%}%60<..<%~%{$fg[blue]%}$(git_prompt_info)%{$reset_color%} '
 
-ZSH_THEME_SVN_PROMPT_PREFIX=" %{$fg[yellow]%}svn:("
-ZSH_THEME_SVN_PROMPT_SUFFIX=")%{$reset_color%}"
+if which rbenv &> /dev/null; then
+	RPROMPT='%{$fg[red]%}$(rbenv version | sed -e "s/ (set.*$//") %{$reset_color%}'
+fi
 
-# PROMPT="[%*] %n:%c $(git_prompt_info)%(!.#.$) "
-PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[cyan]%}%m%{$reset_color%}:%{$fg[green]%}%60<..<%~%{$reset_color%}$(svn_prompt_info)$(git_prompt_info) %(!.#.$) '
-
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-RPS1="${return_code}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" (%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}*%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
