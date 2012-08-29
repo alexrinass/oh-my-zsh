@@ -1,12 +1,20 @@
-if [ -x /opt/local/bin/gdircolors ]; then
-  alias dircolors='/opt/local/bin/gdircolors'
+DIRCOLORS=$(which gdircolors)
+
+if [ -z "$DIRCOLORS" ]; then
+  DIRCOLORS=$(which dircolors)
 fi
 
-if [ -x /opt/local/bin/gls ]; then
-  alias ls='/opt/local/bin/gls --color=auto'
+LS=$(which gls)
+
+if [ -z "$LS" ]; then
+  LS=$(which ls)
+fi
+
+if [ -x "$LS" ]; then
+  alias ls="$LS --color=auto"
 fi
 
 # Set terminal display colors
-if [ ! -z "$ZSH_DIRCOLORS_THEME" ] && [ -f "$ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme" ]; then
-  eval `dircolors "$ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme"`
+if  [ -x "$DIRCOLORS" ] && [ ! -z "$ZSH_DIRCOLORS_THEME" ] && [ -f "$ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme" ]; then
+  eval `$DIRCOLORS "$ZSH/plugins/dircolors/themes/$ZSH_DIRCOLORS_THEME.dircolors-theme"`
 fi
