@@ -1,0 +1,39 @@
+#/bin/sh
+#
+# Script to create an empty Git-Repository.
+#
+GIT_BASEPATH=/var/cache/git
+SCRIPT_NAME="`basename $0`"
+PROJECT_NAME="$1"
+
+if [ -z "$PROJECT_NAME" ]; then
+  echo "Usage: $SCRIPT_NAME PROJECT_NAME"
+  exit 0
+fi
+
+PROJECT_NAME="`basename $PROJECT_NAME .git`.git"
+PROJECT_PATH="$GIT_BASEPATH/$PROJECT_NAME"
+
+if [ -d "$PROJECT_PATH" ]; then
+  echo "An Git repository already exists at $PROJECT_PATH! Aborting."
+  exit 0
+fi
+
+if [ ! -w "$GIT_BASEPATH" ]; then
+  echo "The directory $GIT_BASEBATH is not writeable for your user. Maybe you forgot sudo? Aborting."
+  exit 0
+fi
+
+echo " * Creating directory at $PROJECT_PATH with mode 2775..."
+mkdir $PROJECT_PATH
+chmod 2775 $PROJECT_PATH
+
+echo " * Initializing bare empty Git repository with shared=group..." 
+cd $PROJECT_PATH
+git init --bare -q --shared=group
+ 
+echo " * Changing group to git..."
+chown -R :git $PROJECT_PATH
+
+echo "Done."
+
