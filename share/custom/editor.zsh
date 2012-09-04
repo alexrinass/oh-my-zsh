@@ -1,4 +1,4 @@
-# TextMate as default editor
-if [ -x /usr/bin/mate ]; then
-  export EDITOR=/usr/bin/mate
+# Chocolat as default editor
+if [ -x /usr/local/bin/choc ]; then
+  export EDITOR=/usr/local/bin/choc
 fi
