@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CURRENT_STATE=$(defaults read com.apple.finder AppleShowAllFiles)
+
+if [ $CURRENT_STATE == "YES" ]; then
+  echo "Not showing hidden files in Finder..."
+  defaults write com.apple.finder AppleShowAllFiles NO && killall Finder
+else
+  echo "Showing hidden files in Finder..."
+  defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
+fi
