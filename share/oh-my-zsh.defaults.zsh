@@ -28,7 +28,7 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_COMPLETION_WAITING_DOTS="true"
 
 # Extend PATH variable 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$ZSH/bin:$PATH
 
 if [ -d $HOME/bin ]; then
   export PATH=$HOME/bin:$PATH
