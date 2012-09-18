@@ -4,7 +4,11 @@ else
 	PROMPT='%{$fg[blue]%}%60<..<%~%{$reset_color%}$(git_prompt_info)%{$reset_color%} '
 fi
 
-RPROMPT='(%?) %{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%}'
+if [[ ${plugins[(i)rbenv]} -le ${#plugins} ]] ; then
+	RPROMPT='(%?) %{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%}'
+else
+	RPROMPT='(%?)'
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" (%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
