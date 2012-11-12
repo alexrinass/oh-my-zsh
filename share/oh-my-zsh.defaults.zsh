@@ -10,7 +10,7 @@ ZSH_THEME="alexrinass"
 ZSH_DIRCOLORS_THEME="alexrinass"
 
 # Set name of manpager to use
-ZSH_MANPAGER="chocolat"
+ZSH_MANPAGER="textmate"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
