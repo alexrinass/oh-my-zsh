@@ -1,1 +1,1 @@
-source "$ZSH/plugins/manpager/pagers/$ZSH_MANPAGER.manpager.zsh"
+source "$ZSH/custom/plugins/manpager/pagers/$ZSH_MANPAGER.manpager.zsh"
