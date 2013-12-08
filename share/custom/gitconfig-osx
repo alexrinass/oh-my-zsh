@@ -1,0 +1,42 @@
+[core]
+	trustctime = false
+	editor = /usr/local/bin/choc -w
+[push]
+	default = tracking
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	st = status -sb
+	sst = submodule status
+	co = checkout
+	lsb = "branch -v"
+	ls = "log --oneline --decorate"
+	cl = "log --pretty=format:'* %s' --no-merges"
+	lsg = "log --oneline --decorate --graph"
+	untrack = "rm -r --cached --"
+	unstage = "reset HEAD --"
+	rf = "checkout HEAD --"
+	su = "submodule update --init --recursive"
+	me = "log --author='alex' --after=yesterday --no-merges --oneline --reverse"
+	lsi = "ls-files --others --ignored --exclude-standard"
+	lsit = "ls-files --ignored --exclude-standard"
+	ksdiff = "difftool --tool=ksdiff"
+[status]
+	showUntrackedFiles = normal # no|normal*|all
+[merge]
+	tool = opendiff
+[mergetool]
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+	prompt = false
+[diff]
+	tool = ksdiff
+[difftool "ksdiff"]
+	cmd = "/usr/local/bin/ksdiff $LOCAL $REMOTE"
+[difftool]
+	prompt = false
