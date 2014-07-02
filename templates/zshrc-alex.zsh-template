@@ -7,6 +7,6 @@ source $ZSH/share/oh-my-zsh.defaults.zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(dircolors) # Linux
-#plugins=(macports dircolors manpager mysql-macports apache2-macports) # Mac OS X
+#plugins=(brew dircolors manpager autojump) # Mac OS X
 
 source $ZSH/oh-my-zsh.sh
