@@ -10,3 +10,9 @@ source $ZSH/share/oh-my-zsh.defaults.zsh
 #plugins=(brew dircolors manpager autojump) # Mac OS X
 
 source $ZSH/oh-my-zsh.sh
+
+# Support Homebrew Ruby
+#export PATH=$(brew --prefix ruby)/bin:$PATH
+
+# chruby support
+#source /usr/local/opt/chruby/share/chruby/chruby.sh
